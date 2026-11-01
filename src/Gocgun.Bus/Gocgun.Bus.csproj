@@ -6,7 +6,7 @@
     <Version>0.1.0</Version>
     <Authors>Omer Faruk Gocgun</Authors>
     <Description>Process-boundary messaging with a protobuf-net envelope, RabbitMQ, and an in-memory channel transport.</Description>
-    <PackageLicenseExpression>AGPL-3.0-only</PackageLicenseExpression>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryUrl>https://github.com/farukgocgun/Gocgun.Bus</RepositoryUrl>
     <PackageProjectUrl>https://github.com/farukgocgun/Gocgun.Bus</PackageProjectUrl>
