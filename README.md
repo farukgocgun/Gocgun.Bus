@@ -2,9 +2,9 @@
 
 > **Beta.** This package is in beta: the public API may change between releases.
 
-AGPLv3 library for messages that cross a process boundary.
+Library for messages that cross a process boundary.
 
-License: AGPL-3.0-only (`LICENSE`). Copyright holder exception: `LICENSE-EXCEPTION`.
+License: MIT (`LICENSE`).
 
 `IMessageBus.PublishAsync` publishes an integration event. `SendAsync` sends an integration command. Both wrap the payload in `gocgun.bus.v1.Envelope`. The wire name is the payload type URL. An unknown type is dead-lettered and no handler runs.
 
