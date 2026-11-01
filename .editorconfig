@@ -1,0 +1,12 @@
+﻿root = true
+
+[*]
+charset = utf-8-bom
+end_of_line = crlf
+insert_final_newline = true
+
+[*.{json,props,csproj,slnx,config,md,proto}]
+indent_style = space
+
+[**/obj/**]
+generated_code = true

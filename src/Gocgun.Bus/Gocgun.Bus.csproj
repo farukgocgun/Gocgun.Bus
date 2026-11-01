@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>Gocgun.Bus</RootNamespace>
+    <AssemblyName>Gocgun.Bus</AssemblyName>
+    <PackageId>Gocgun.Bus</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Omer Faruk Gocgun</Authors>
+    <Description>Process-boundary messaging with a protobuf-net envelope, RabbitMQ, and an in-memory channel transport.</Description>
+    <PackageLicenseExpression>AGPL-3.0-only</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <RepositoryUrl>https://github.com/farukgocgun/crocovity</RepositoryUrl>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Options" />
+    <PackageReference Include="protobuf-net" />
+    <PackageReference Include="RabbitMQ.Client" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="appsettings.Gocgun.Bus.json" Pack="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Gocgun.Bus.Tests" />
+  </ItemGroup>
+</Project>
