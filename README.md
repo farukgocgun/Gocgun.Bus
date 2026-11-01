@@ -72,3 +72,7 @@ The package does not read configuration. `appsettings.Gocgun.Bus.json` shows the
 RabbitMQ credentials have no defaults. Startup fails when the host name, user, or password is empty.
 
 The package has no tenant field and no outbox type. It does not reference `Gocgun.Mediator`. Durable outbox and tenant filters stay in the host.
+
+## Publishing to nuget.org
+
+Run `scripts/publish.sh` (or `scripts/publish.ps1` on Windows). It dispatches the manual `release.yml` workflow of each dependency first, in dependency order (Gocgun.Bus), then of this package, waiting for each run and stopping on the first failure. Requires the GitHub CLI signed in with `gh auth login`; the `nuget` environment and the nuget.org Trusted Publishing policy must exist in each repository.
