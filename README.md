@@ -13,15 +13,15 @@ License: MIT (`LICENSE`).
 Messages are C# classes serialized with protobuf-net. No `.proto` files and no code generation. The contract name is required: it is the wire name and the RabbitMQ routing key, so renaming or moving the class does not change routing.
 
 ```csharp
-[ProtoContract(Name = "crocovity.tools.v1.ToolUsed")]
-public sealed class ToolUsed : IIntegrationEvent
+[ProtoContract(Name = "shop.orders.v1.OrderShipped")]
+public sealed class OrderShipped : IIntegrationEvent
 {
     [ProtoMember(1)]
-    public string Tool { get; set; } = string.Empty;
+    public string OrderId { get; set; } = string.Empty;
 }
 ```
 
-The envelope (`Gocgun.Bus.V1.Envelope`) keeps the proto3 wire layout: `sent_at` is a `google.protobuf.Timestamp`, `headers` a map, and the payload uses the `google.protobuf.Any` layout with a `type.googleapis.com/` type URL. A non-.NET consumer can export a schema with `Serializer.GetProto<ToolUsed>()`.
+The envelope (`Gocgun.Bus.V1.Envelope`) keeps the proto3 wire layout: `sent_at` is a `google.protobuf.Timestamp`, `headers` a map, and the payload uses the `google.protobuf.Any` layout with a `type.googleapis.com/` type URL. A non-.NET consumer can export a schema with `Serializer.GetProto<OrderShipped>()`.
 
 ## Buses
 
@@ -44,7 +44,7 @@ services.AddGocgunBus("orders", bus => bus
 
 services.AddGocgunBus("analytics", bus => bus
     .UseRabbitMq(options => configuration.GetSection("Buses:analytics:RabbitMq").Bind(options))
-    .AddHandler<ToolUsed, ToolUsedHandler>());
+    .AddHandler<OrderShipped, OrderShippedHandler>());
 ```
 
 Resolving a bus:
